@@ -21,7 +21,7 @@ class SignIn extends Component {
     if (auth.uid) {
       return <Redirect to="/" />;
     }
-    if (auth.isReady) {
+    if (auth.isLoaded) {
       return (
         <div className="container">
           <form onSubmit={this.handleSubmit} className="white">

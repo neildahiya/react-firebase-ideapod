@@ -8,6 +8,7 @@ class CreateProject extends Component {
     content: "",
   };
   handleChange = (e) => {
+    console.log(this.state);
     this.setState({
       [e.target.id]: e.target.value,
     });
@@ -15,6 +16,7 @@ class CreateProject extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.createProject(this.state);
+    this.props.history.push("/");
   };
   render() {
     const { auth } = this.props;
@@ -39,7 +41,7 @@ class CreateProject extends Component {
             <textarea
               name="content"
               id="content"
-              onChange={this.onChange}
+              onChange={this.handleChange}
               className="materialize-textarea"
             ></textarea>
           </div>
